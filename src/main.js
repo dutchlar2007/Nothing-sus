@@ -119,6 +119,13 @@ class FancyText {
             this.breakActive = 0;
         }
     }
+
+    touched() {
+        if (this.breakActive == 1) {
+            this.keyJustPressed = 1;
+            this.breakActive = 0;
+        }
+    }
 }
 
 
@@ -149,6 +156,14 @@ class Box {
 
 var drawable = [];
 var updateable = [];
+
+function touched(event) {
+    for (var i = 0; i < updateable.length; i++) {
+        if (updateable[i].touched){
+            updateable[i].touched();
+        }
+    }
+}
 
 function keypressed(event) {
     var key = event.key;
@@ -217,7 +232,7 @@ var scaledHeight = context.canvas.height/3;
 var scaledWidth = scaledHeight*323/308;
 var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - scaledWidth/2, context.canvas.height/2 - scaledHeight, scaledWidth, scaledHeight);
 
-
+document.addEventListener("touchstart", touched);
 document.addEventListener("keydown", keypressed);
 makeCenterTextBox(700, 100, 40, "it's a beautiful day outside.[break][clear]birds are singing, flowers are blooming . . . [break][clear]on days like these,[break] girls like you . . . [break][clear]should go to prom with me");
 drawable.push(img);
