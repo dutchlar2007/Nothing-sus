@@ -215,10 +215,10 @@ function makeCenterTextBox(width, height, textSize,  text) {
 //the image Im using is 323 X 308
 var scaledHeight = context.canvas.height/3;
 var scaledWidth = scaledHeight*323/308;
-var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - scaledWidth/2, context.canvas.height/2 - scaledHeight*2/3, scaledWidth, scaledHeight);
+var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - scaledWidth/2, context.canvas.height/2 - scaledHeight, scaledWidth, scaledHeight);
 
 
 document.addEventListener("keydown", keypressed);
-makeCenterTextBox(500, 50, 20, "it's a beautiful day outside.[break][clear]birds are singing, flowers are blooming . . . [break][clear]on days like these,[break] girls like you . . . [break][clear]should go to prom with me");
+makeCenterTextBox(700, 100, 30, "it's a beautiful day outside.[break][clear]birds are singing, flowers are blooming . . . [break][clear]on days like these,[break] girls like you . . . [break][clear]should go to prom with me");
 drawable.push(img);
 setInterval(draw, 1);
