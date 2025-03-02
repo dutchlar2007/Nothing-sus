@@ -182,15 +182,17 @@ function draw() {
 //===============================================================================================
 
 class ImageDrawer{
-    constructor(src, x, y){
+    constructor(src, x, y, scaledWidth, scaledHeight){
         this.image = new Image();
         this.image.src = src;
         this.x = x;
         this.y = y;
+        this.width = scaledWidth;
+        this.height = scaledHeight;
     }
 
     draw() {
-        context.drawImage(this.image, this.x, this.y);
+        context.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -209,7 +211,11 @@ function makeCenterTextBox(width, height, textSize,  text) {
 }
 
 //===============================================================================================
-var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - 324/2, context.canvas.height/2 - 180);
+
+//the image Im using is 323 X 308
+var scaledHeight = context.canvas.height/3;
+var scaledWidth = scaledHeight*323/308;
+var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - 324/2, context.canvas.height/2 - 180, scaledWidth, scaledHeight);
 
 
 document.addEventListener("keydown", keypressed);
