@@ -204,7 +204,7 @@ function makeCenterTextBox(width, height, textSize,  text) {
     var xPos = screenWidth/2 - width/2;
     var yPos = 2*screenHeight/3;
     var textBox =  new Box(xPos, yPos, width, height);
-    var textInBox = new FancyText(text, textSize, xPos + 10, yPos + textSize + 10);
+    var textInBox = new FancyText(text, textSize, xPos + 10, yPos + textSize + 20);
     updateable.push(textInBox);
     drawable.push(textInBox);
     drawable.push(textBox); 
@@ -219,6 +219,6 @@ var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - scale
 
 
 document.addEventListener("keydown", keypressed);
-makeCenterTextBox(700, 100, 30, "it's a beautiful day outside.[break][clear]birds are singing, flowers are blooming . . . [break][clear]on days like these,[break] girls like you . . . [break][clear]should go to prom with me");
+makeCenterTextBox(700, 100, 40, "it's a beautiful day outside.[break][clear]birds are singing, flowers are blooming . . . [break][clear]on days like these,[break] girls like you . . . [break][clear]should go to prom with me");
 drawable.push(img);
 setInterval(draw, 1);
