@@ -215,7 +215,7 @@ function makeCenterTextBox(width, height, textSize,  text) {
 //the image Im using is 323 X 308
 var scaledHeight = context.canvas.height/3;
 var scaledWidth = scaledHeight*323/308;
-var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - 324/2, context.canvas.height/2 - 180, scaledWidth, scaledHeight);
+var img = new ImageDrawer("./assets/LilDude.jpg", context.canvas.width/2 - scaledWidth/2, context.canvas.height/2 - scaledHeight*2/3, scaledWidth, scaledHeight);
 
 
 document.addEventListener("keydown", keypressed);
